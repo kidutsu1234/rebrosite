@@ -188,7 +188,7 @@
 
         .menu-card .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #2a2a2a; padding-top: 15px; margin-top: auto; }
         .menu-card .price { font-size: 1.4rem; font-weight: 900; color: var(--accent); }
-        .menu-card .btn-cart { font-size: 0.8rem; font-weight: 800; color: #fff; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
+        .menu-card .btn-cart { font-size: 0.8rem; font-weight: 800; color: #fff; text-transform: uppercase; cursor: pointer; transition: color 0.2s; background: none; border: none; font-family: inherit; }
         .menu-card .btn-cart:hover { color: var(--accent); }
 
         /* ===== ДОСТАВКА ===== */
@@ -217,6 +217,90 @@
         }
         .app-btn:hover { transform: scale(1.05); }
 
+        /* ===== О НАС ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid var(--smoke);
+        }
+
+        .about-card h3 {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .about-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .about-card p:last-child { margin-bottom: 0; }
+
+        .about-card .req-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .about-card .req-list li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .about-card .req-list li span { color: var(--text-main); font-weight: 600; }
+
+        .map-container {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--smoke);
+            height: 100%;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            flex-grow: 1;
+            border: none;
+        }
+
+        .payment-info {
+            background: #1a1a1a;
+            border-left: 4px solid var(--accent);
+            padding: 20px 25px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 30px;
+        }
+
+        .payment-info h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .payment-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
         /* ===== ЮРИДИЧЕСКИЕ ВКЛАДКИ ===== */
         .legal-section { background: #080808; padding: 60px 0; border-top: 1px solid var(--smoke); }
         .legal-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; border-bottom: 1px solid var(--smoke); padding-bottom: 15px; }
@@ -240,77 +324,102 @@
         .legal-content li { margin-bottom: 6px; }
 
         /* ===== СОЦИАЛЬНЫЕ СЕТИ ===== */
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
+        .social-links { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
         .social-link {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: #1a1a1a;
-            border: 1px solid #333;
-            padding: 20px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: all 0.2s;
+            display: flex; align-items: center; gap: 15px; background: #1a1a1a; border: 1px solid #333;
+            padding: 20px 25px; border-radius: 12px; text-decoration: none; color: var(--text-main); transition: all 0.2s;
         }
-
-        .social-link:hover {
-            border-color: var(--accent);
-            transform: translateX(5px);
-        }
-
-        .social-link .social-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .social-link .social-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .social-link .social-info h4 {
-            color: var(--gold);
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
-        }
-
-        .social-link .social-info p {
-            color: var(--text-muted);
-            margin: 0;
-            font-size: 0.85rem;
-        }
+        .social-link:hover { border-color: var(--accent); transform: translateX(5px); }
+        .social-link .social-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; }
+        .social-link .social-icon img { width: 100%; height: 100%; object-fit: contain; }
+        .social-link .social-info h4 { color: var(--gold); margin: 0 0 5px 0; font-size: 1.1rem; }
+        .social-link .social-info p { color: var(--text-muted); margin: 0; font-size: 0.85rem; }
 
         /* ===== ФУТЕР ===== */
         footer { background: #080808; border-top: 2px solid var(--smoke); padding: 60px 0 30px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-bottom: 40px; }
         .footer-brand h3 { font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 10px; }
         .footer-brand p { color: var(--text-muted); font-size: 0.95rem; max-width: 300px; }
         .footer-col h4 { color: var(--gold); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-        .footer-col p, .footer-col a { color: var(--text-muted); font-size: 0.95rem; text-decoration: none; display: block; margin-bottom: 8px; }
+        .footer-col p { color: var(--text-muted); font-size: 0.95rem; text-decoration: none; display: block; margin-bottom: 8px; }
         .footer-bottom { border-top: 1px solid var(--smoke); padding-top: 30px; text-align: center; color: #555; font-size: 0.85rem; }
 
-        .vk-footer-img {
-            width: 40px;
-            height: 40px;
-            display: block;
-            margin-top: 15px;
-            transition: transform 0.2s;
+        .vk-footer-img { width: 40px; height: 40px; display: block; margin-top: 15px; transition: transform 0.2s; }
+        .vk-footer-img:hover { transform: scale(1.1); }
+
+        /* ===== КОРЗИНА ===== */
+        .cart-fab {
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--accent); color: #fff;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; cursor: pointer; z-index: 1000;
+            box-shadow: 0 10px 25px rgba(232, 93, 4, 0.4);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .cart-fab:hover { transform: scale(1.1); background: var(--accent-glow); }
+
+        .cart-badge {
+            position: absolute; top: -5px; right: -5px;
+            background: #fff; color: var(--bg-dark);
+            font-size: 0.9rem; font-weight: 900;
+            width: 26px; height: 26px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            border: 3px solid var(--bg-dark);
         }
 
-        .vk-footer-img:hover {
-            transform: scale(1.1);
+        .cart-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 1001;
+            opacity: 0; visibility: hidden; transition: all 0.3s;
         }
+        .cart-overlay.active { opacity: 1; visibility: visible; }
+
+        .cart-panel {
+            position: fixed; top: 0; right: -400px; width: 100%; max-width: 400px; height: 100%;
+            background: var(--bg-card); z-index: 1002; display: flex; flex-direction: column;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5); transition: right 0.3s ease;
+        }
+        .cart-panel.active { right: 0; }
+
+        .cart-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px; border-bottom: 1px solid var(--smoke);
+        }
+        .cart-header h3 { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; }
+        .cart-close { font-size: 1.8rem; cursor: pointer; color: var(--text-muted); background: none; border: none; }
+        .cart-close:hover { color: #fff; }
+
+        .cart-items { flex-grow: 1; overflow-y: auto; padding: 25px; }
+        .cart-empty { color: var(--text-muted); text-align: center; margin-top: 50px; }
+
+        .cart-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 0; border-bottom: 1px solid #2a2a2a;
+        }
+        .cart-item-info { flex-grow: 1; padding-right: 15px; }
+        .cart-item-info h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 5px; }
+        .cart-item-info p { font-size: 0.85rem; color: var(--accent); font-weight: 900; }
+        
+        .cart-item-controls { display: flex; align-items: center; gap: 10px; }
+        .cart-qty-btn {
+            background: #2a2a2a; color: #fff; border: none; width: 28px; height: 28px;
+            border-radius: 6px; cursor: pointer; font-weight: 900; display: flex; align-items: center; justify-content: center;
+        }
+        .cart-qty-btn:hover { background: var(--accent); }
+        .cart-qty-val { font-size: 0.95rem; font-weight: 700; min-width: 20px; text-align: center; }
+        .cart-item-remove { color: #ff4d4d; cursor: pointer; background: none; border: none; font-size: 1.2rem; margin-left: 5px; }
+        .cart-item-remove:hover { color: #ff0000; }
+
+        .cart-footer { padding: 25px; border-top: 1px solid var(--smoke); background: #151515; }
+        .cart-total { display: flex; justify-content: space-between; font-size: 1.4rem; font-weight: 900; margin-bottom: 20px; }
+        .cart-total span:last-child { color: var(--accent); }
+        .cart-checkout {
+            width: 100%; padding: 18px; background: var(--accent); color: #fff;
+            border: none; border-radius: 12px; font-size: 1.1rem; font-weight: 900;
+            text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+        }
+        .cart-checkout:hover { background: var(--accent-glow); }
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 900px) {
@@ -318,10 +427,12 @@
             .hero-desc { margin-left: auto; margin-right: auto; }
             .hero-badges { justify-content: center; }
             .delivery-block { grid-template-columns: 1fr; padding: 30px; }
+            .about-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-brand p { margin-left: auto; margin-right: auto; }
             .app-buttons { justify-content: center; }
             .vk-footer-img { margin: 15px auto 0; }
+            .map-container { min-height: 300px; }
         }
 
         @media (max-width: 600px) {
@@ -329,6 +440,8 @@
             .btn-primary { display: block; width: 100%; text-align: center; }
             .menu-grid { grid-template-columns: 1fr; }
             .legal-tab { font-size: 0.75rem; padding: 8px 14px; }
+            .cart-fab { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 1.5rem; }
+            .about-card { padding: 25px; }
         }
     </style>
 </head>
@@ -369,7 +482,6 @@
             <p>Самовывоз · Доставка. Актуальные цены с официального сайта.</p>
         </div>
 
-        <!-- Фильтры -->
         <div class="menu-filters">
             <button class="filter-btn active" data-filter="all">Все</button>
             <button class="filter-btn" data-filter="smoker">Смокер</button>
@@ -381,8 +493,7 @@
             <button class="filter-btn" data-filter="drinks">Напитки / Соусы</button>
         </div>
 
-        <div class="menu-grid">
-
+        <div class="menu-grid" id="menu-grid">
             <!-- СМОКЕР -->
             <div class="menu-card" data-category="smoker">
                 <img class="card-img" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Рёбра BBQ">
@@ -391,7 +502,10 @@
                     <h3>Рёбра BBQ Big</h3>
                     <div class="desc">Свиные рёбрышки, томленые в смокере 7 часов на дубовых дровах, глазированные соусом барбекю.</div>
                     <div class="meta"><span>600 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">1 250 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">1250</span>
+                        <button class="btn-cart" data-name="Рёбра BBQ Big" data-price="1250">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="smoker">
@@ -401,7 +515,10 @@
                     <h3>Рёбра BBQ STANDART</h3>
                     <div class="desc">Свиные ребра, томленые в смокере 7 часов на дубовых дровах, глазированные соусом барбекю.</div>
                     <div class="meta"><span>300 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">800 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">800</span>
+                        <button class="btn-cart" data-name="Рёбра BBQ STANDART" data-price="800">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="smoker">
@@ -411,7 +528,10 @@
                     <h3>Рулька BBQ</h3>
                     <div class="desc">Рулька, томленая в смокере на дубовых дровах 9 часов, в кисло-сладком соусе.</div>
                     <div class="meta"><span>900 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">1 000 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">1000</span>
+                        <button class="btn-cart" data-name="Рулька BBQ" data-price="1000">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="smoker">
@@ -421,7 +541,10 @@
                     <h3>1/2 Цыпленок BBQ в соусе терiyaki</h3>
                     <div class="desc">1/2 цыпленка, томленая в смокере 7 часов на дубовых дровах, глазированная соусом терияки.</div>
                     <div class="meta"><span>700 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">780 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">780</span>
+                        <button class="btn-cart" data-name="1/2 Цыпленок BBQ" data-price="780">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
 
@@ -433,7 +556,10 @@
                     <h3>Шашлык из свиной шеи</h3>
                     <div class="desc">Свиная шея в ароматных специях. Подается с луком и шашлычным соусом.</div>
                     <div class="meta"><span>300 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">570 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">570</span>
+                        <button class="btn-cart" data-name="Шашлык из свиной шеи" data-price="570">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -443,7 +569,10 @@
                     <h3>Шашлык из куриного филе</h3>
                     <div class="desc">Куриное филе в медово-горчичном маринаде. Подается с луком и шашлычным соусом.</div>
                     <div class="meta"><span>300 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">550 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">550</span>
+                        <button class="btn-cart" data-name="Шашлык из куриного филе" data-price="550">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -453,7 +582,10 @@
                     <h3>Чалагач из свинины</h3>
                     <div class="desc">Сочный карбонат на ребре. Подается с фирменным соусом и репчатым луком.</div>
                     <div class="meta"><span>300 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">570 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">570</span>
+                        <button class="btn-cart" data-name="Чалагач из свинины" data-price="570">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -463,7 +595,10 @@
                     <h3>Каре ягненка на мангале</h3>
                     <div class="desc">Каре молодого ягненка, подается с маринаванным луком и фирменным соусом.</div>
                     <div class="meta"><span>300 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">870 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">870</span>
+                        <button class="btn-cart" data-name="Каре ягненка" data-price="870">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -473,7 +608,10 @@
                     <h3>Люля-кебаб баранина</h3>
                     <div class="desc">Сочный люля из баранины с ароматными специями, подается с луком и шашлычным соусом.</div>
                     <div class="meta"><span>250 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">590 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">590</span>
+                        <button class="btn-cart" data-name="Люля-кебаб баранина" data-price="590">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -483,7 +621,10 @@
                     <h3>Люля-кебаб свинина/говядина</h3>
                     <div class="desc">Сочный люля из свинины/говядины с ароматными специями, подается с луком и шашлычным соусом.</div>
                     <div class="meta"><span>250 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">510 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">510</span>
+                        <button class="btn-cart" data-name="Люля-кебаб свинина/говядина" data-price="510">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -493,7 +634,10 @@
                     <h3>Люля-кебаб из курицы</h3>
                     <div class="desc">Сочный люля из курицы с ароматными специями, подается с луком и шашлычным соусом.</div>
                     <div class="meta"><span>250 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">490 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">490</span>
+                        <button class="btn-cart" data-name="Люля-кебаб из курицы" data-price="490">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -503,7 +647,10 @@
                     <h3>Овощи на мангале</h3>
                     <div class="desc">Ассорти овощей, приготовленные на мангале.</div>
                     <div class="meta"><span>200 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">420 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">420</span>
+                        <button class="btn-cart" data-name="Овощи на мангале" data-price="420">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -513,7 +660,10 @@
                     <h3>Картофель на мангале</h3>
                     <div class="desc">Картофель в фирменном маринаде, приготовленный на мангале.</div>
                     <div class="meta"><span>200 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">230 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">230</span>
+                        <button class="btn-cart" data-name="Картофель на мангале" data-price="230">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -523,7 +673,10 @@
                     <h3>Картофель на мангале с салом</h3>
                     <div class="desc">Картофель с салом в фирменном маринаде, приготовленный на мангале.</div>
                     <div class="meta"><span>250 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">280 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">280</span>
+                        <button class="btn-cart" data-name="Картофель с салом" data-price="280">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -533,7 +686,10 @@
                     <h3>Грибы шампиньоны на мангале</h3>
                     <div class="desc">Сочные шампиньоны в фирменном маринаде, приготовленные на мангале.</div>
                     <div class="meta"><span>200 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">290 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">290</span>
+                        <button class="btn-cart" data-name="Грибы шампиньоны" data-price="290">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="mangal">
@@ -543,7 +699,10 @@
                     <h3>Глазированные куриные крылья с чесноком</h3>
                     <div class="desc">Крылышки на огне в соусе с чесноком и кунжутом.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">550 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">550</span>
+                        <button class="btn-cart" data-name="Куриные крылья" data-price="550">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
 
@@ -555,7 +714,10 @@
                     <h3>Сет XL</h3>
                     <div class="desc">Большой сет для большой компании: Рёбра BBQ BIG, рёбра BBQ, шашлык из свиной шеи, картофель на мангале 2 порции, грибы на мангале, лаваш тонкий, луковые кольца, салат коул слоу, соус на выбор.</div>
                     <div class="meta"><span>2800 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">3 700 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">3700</span>
+                        <button class="btn-cart" data-name="Сет XL" data-price="3700">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="sets">
@@ -565,7 +727,10 @@
                     <h3>Сет L</h3>
                     <div class="desc">Сет на компанию из 3 человек: Рёбра BBQ standart, 0.5 цыпленка BBQ, шашлык из свиной шеи, картофель на мангале, грибы на мангале, лаваш тонкий, луковые кольца, салат коул слоу, 2 соуса на выбор.</div>
                     <div class="meta"><span>1800 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">2 400 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">2400</span>
+                        <button class="btn-cart" data-name="Сет L" data-price="2400">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="sets">
@@ -575,7 +740,10 @@
                     <h3>Сет Чикен</h3>
                     <div class="desc">Сет на компанию из 2-3 человек: 0.5 цыпленка BBQ, шашлык из курицы, картофель на мангале, грибы на мангале, лаваш тонкий, луковые кольца, салат коул слоу, 2 соуса на выбор.</div>
                     <div class="meta"><span>1600 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">1 850 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">1850</span>
+                        <button class="btn-cart" data-name="Сет Чикен" data-price="1850">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="sets">
@@ -585,7 +753,10 @@
                     <h3>Сет Веган</h3>
                     <div class="desc">Овощи на гриле, приготовленные на мангале, картофель на мангале 2 порции, грибы на мангале, овощи на мангале болгарский перец, кабачок, помидор, лук репчатый, салат коул слоу, лаваш тонкий, 2 соуса на выбор.</div>
                     <div class="meta"><span>1000 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">1 600 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">1600</span>
+                        <button class="btn-cart" data-name="Сет Веган" data-price="1600">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
 
@@ -597,7 +768,10 @@
                     <h3>Удон с овощами</h3>
                     <div class="desc">Лапша, кунжут, соевый (кислого-сладкий) перец, болгарский перец, фирменный соус.</div>
                     <div class="meta"><span>400 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">380 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">380</span>
+                        <button class="btn-cart" data-name="Удон с овощами" data-price="380">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="wok">
@@ -607,7 +781,10 @@
                     <h3>Удон с курицей</h3>
                     <div class="desc">Куриное филе обжаренное в пикантном соусе, лапша, болгарский перец, кунжут.</div>
                     <div class="meta"><span>400 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">430 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">430</span>
+                        <button class="btn-cart" data-name="Удон с курицей" data-price="430">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="wok">
@@ -617,7 +794,10 @@
                     <h3>Удон с морепродуктами</h3>
                     <div class="desc">Креветки, кальмары, мидии, обжаренные в пикантном соусе, лапша, болгарский перец, кунжут.</div>
                     <div class="meta"><span>400 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">540 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">540</span>
+                        <button class="btn-cart" data-name="Удон с морепродуктами" data-price="540">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="wok">
@@ -627,7 +807,10 @@
                     <h3>Узбекский плов</h3>
                     <div class="desc">Классический узбекский плов с говядиной.</div>
                     <div class="meta"><span>300 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">420 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">420</span>
+                        <button class="btn-cart" data-name="Узбекский плов" data-price="420">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
 
@@ -639,7 +822,10 @@
                     <h3>Шаурма со свининой</h3>
                     <div class="desc">Свинина, приготовленная на мангале с добавлением свежих овощей в лаваше.</div>
                     <div class="meta"><span>400 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">295 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">295</span>
+                        <button class="btn-cart" data-name="Шаурма со свининой" data-price="295">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -649,7 +835,10 @@
                     <h3>Шаурма с курицей</h3>
                     <div class="desc">Мясо цыпленка, приготовленное на мангале с добавлением свежих овощей в лаваше.</div>
                     <div class="meta"><span>400 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">295 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">295</span>
+                        <button class="btn-cart" data-name="Шаурма с курицей" data-price="295">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -659,7 +848,10 @@
                     <h3>Шаурма по-корейски</h3>
                     <div class="desc">Мясо, приготовленное на мангале с добавлением свежих овощей и корейской моркови в лаваше.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">310 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">310</span>
+                        <button class="btn-cart" data-name="Шаурма по-корейски" data-price="310">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -669,7 +861,10 @@
                     <h3>Свинина в булке</h3>
                     <div class="desc">Свинина, приготовленная на мангале с добавлением свежих овощей в булке-бриошь.</div>
                     <div class="meta"><span>500 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">330 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">330</span>
+                        <button class="btn-cart" data-name="Свинина в булке" data-price="330">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -679,7 +874,10 @@
                     <h3>Курица в лепешке с картофелем фри</h3>
                     <div class="desc">Мясо цыпленка, приготовленное на мангале с добавлением свежих овощей в армянской лепешке.</div>
                     <div class="meta"><span>450 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">330 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">330</span>
+                        <button class="btn-cart" data-name="Курица в лепешке" data-price="330">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -689,7 +887,10 @@
                     <h3>Салат Коул-слоу</h3>
                     <div class="desc">Легкий салат из капусты и моркови с добавлением яблока и пряной заправки.</div>
                     <div class="meta"><span>250 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">100 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">100</span>
+                        <button class="btn-cart" data-name="Салат Коул-слоу" data-price="100">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -699,7 +900,10 @@
                     <h3>Салат цезарь</h3>
                     <div class="desc">Классический салат Цезарь с фирменным соусом.</div>
                     <div class="meta"><span>250 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">430 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">430</span>
+                        <button class="btn-cart" data-name="Салат цезарь" data-price="430">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -709,7 +913,10 @@
                     <h3>Салат из свежих овощей</h3>
                     <div class="desc">Салат из свежих овощей с луком, заправленный маслом.</div>
                     <div class="meta"><span>250 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">280 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">280</span>
+                        <button class="btn-cart" data-name="Салат из свежих овощей" data-price="280">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -719,7 +926,10 @@
                     <h3>Суп с фрикадельками</h3>
                     <div class="desc">Вкусный суп с фрикадельками.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">190 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">190</span>
+                        <button class="btn-cart" data-name="Суп с фрикадельками" data-price="190">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="soups">
@@ -729,7 +939,10 @@
                     <h3>Куриный суп</h3>
                     <div class="desc">Вкусный куриный суп домашний.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">190 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">190</span>
+                        <button class="btn-cart" data-name="Куриный суп" data-price="190">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
 
@@ -741,7 +954,10 @@
                     <h3>Пирог яблочный (кусок)</h3>
                     <div class="desc">Пирог с яблоками и корицей.</div>
                     <div class="meta"><span>200 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">150 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">150</span>
+                        <button class="btn-cart" data-name="Пирог яблочный" data-price="150">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="desserts">
@@ -751,7 +967,10 @@
                     <h3>Торт Наполеон с кремом из вареной сгущенки</h3>
                     <div class="desc">Торт нарезан на фирменную разметку.</div>
                     <div class="meta"><span>180 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">310 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">310</span>
+                        <button class="btn-cart" data-name="Торт Наполеон" data-price="310">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="desserts">
@@ -761,7 +980,10 @@
                     <h3>Торт Медовик</h3>
                     <div class="desc">Торт медовик по фирменному рецепту.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">320 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">320</span>
+                        <button class="btn-cart" data-name="Торт Медовик" data-price="320">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="desserts">
@@ -771,7 +993,10 @@
                     <h3>Пахлава шоколадная</h3>
                     <div class="desc">Фирменные восточные сладости.</div>
                     <div class="meta"><span>75 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">90 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">90</span>
+                        <button class="btn-cart" data-name="Пахлава шоколадная" data-price="90">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="desserts">
@@ -781,7 +1006,10 @@
                     <h3>Пахлава восточная</h3>
                     <div class="desc">Фирменные восточные сладости.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">90 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">90</span>
+                        <button class="btn-cart" data-name="Пахлава восточная" data-price="90">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
 
@@ -793,7 +1021,10 @@
                     <h3>Соусы на выбор (11 видов)</h3>
                     <div class="desc">Кисло-сладкий, сырный, горчично-медовый, чили, барбекю, тартар, шашлычный, чесночный, брусничный, чипотле, джем Деннис.</div>
                     <div class="meta"><span>40 г.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">85 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">85</span>
+                        <button class="btn-cart" data-name="Соусы на выбор" data-price="85">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="drinks">
@@ -803,7 +1034,10 @@
                     <h3>Напиток безалкогольный ж/б 0,33 мл</h3>
                     <div class="desc">Ассорти безалкогольных напитков в жестяных банках.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">100 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">100</span>
+                        <button class="btn-cart" data-name="Напиток безалкогольный" data-price="100">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="drinks">
@@ -813,7 +1047,10 @@
                     <h3>Кола 1 л</h3>
                     <div class="desc">Классическая кола.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">165 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">165</span>
+                        <button class="btn-cart" data-name="Кола 1 л" data-price="165">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="drinks">
@@ -823,7 +1060,10 @@
                     <h3>Вода газированная 0,5 мл</h3>
                     <div class="desc">Вода питьевая газированная.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">80 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">80</span>
+                        <button class="btn-cart" data-name="Вода газированная" data-price="80">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="drinks">
@@ -833,7 +1073,10 @@
                     <h3>Лимонад ягодный 0,5 л</h3>
                     <div class="desc">Лимонад ягодный освежающий.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">110 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">110</span>
+                        <button class="btn-cart" data-name="Лимонад ягодный" data-price="110">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
             <div class="menu-card" data-category="drinks">
@@ -843,7 +1086,10 @@
                     <h3>Лимонад Наттаро 0,5 л</h3>
                     <div class="desc">Лимонад Наттаро.</div>
                     <div class="meta"><span>1 шт.</span><span class="opts">Опции</span></div>
-                    <div class="price-row"><span class="price">170 ₽</span><span class="btn-cart">В КОРЗИНУ</span></div>
+                    <div class="price-row">
+                        <span class="price">170</span>
+                        <button class="btn-cart" data-name="Лимонад Наттаро" data-price="170">В КОРЗИНУ</button>
+                    </div>
                 </div>
             </div>
 
@@ -865,11 +1111,9 @@
                     <li>Оплата картой, наличными, QR</li>
                 </ul>
                 <div class="app-buttons">
-                    <!-- Ссылка на App Store -->
                     <a href="https://apps.apple.com/us/app/ре-бро-гриль-бар-тамбов/id6467116580" target="_blank" rel="noopener noreferrer" class="app-btn">
                         <span class="store-icon">📱</span> App Store
                     </a>
-                    <!-- Ссылка на Google Play -->
                     <a href="https://play.google.com/store/apps/details?id=ru.foodsoul.c8471" target="_blank" rel="noopener noreferrer" class="app-btn">
                         <span class="store-icon">▶</span> Google Play
                     </a>
@@ -878,6 +1122,62 @@
             <div style="text-align: center;">
                 <div style="font-size: 6rem; line-height: 1;">🛵</div>
                 <p style="color: var(--gold); font-weight: 700; font-size: 1.2rem; margin-top: 15px;">Горячим. Быстро. Вкусно.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- О НАС -->
+<section class="section" id="about" style="background: #0d0d0d;">
+    <div class="container">
+        <div class="section-header">
+            <h2>О <span>нас</span></h2>
+            <p>Добро пожаловать на сайт Ре.бро гриль бар | Тамбов.</p>
+        </div>
+
+        <div class="about-grid">
+            <!-- Инфо и Реквизиты -->
+            <div>
+                <div class="about-card" style="margin-bottom: 30px;">
+                    <h3>О компании</h3>
+                    <p>Гриль бар Ре.БРО основан в 2023 г.</p>
+                    <p>Только качественные ингредиенты, фермерское мясо и быстрая доставка.</p>
+                    <p>Здесь вы можете изучить наше меню и оформить заказ на доставку или самовывоз.</p>
+                </div>
+
+                <div class="about-card" style="margin-bottom: 30px;">
+                    <h3>Контакты</h3>
+                    <p>Если у вас возникнут вопросы или пожелания, вы можете связаться с нами любым удобным способом:</p>
+                    <p><strong>Телефон:</strong> 8 915 873-00-03</p>
+                    <p><strong>Email:</strong> rebrotambov@yandex.ru</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Реквизиты</h3>
+                    <ul class="req-list">
+                        <li>📄 Полное наименование организации: <span>Индивидуальный предприниматель Макеева Галина Витальевна</span></li>
+                        <li>🔢 ИНН: <span>683301280805</span></li>
+                        <li>🔢 ОГРН: <span>323680000020000</span></li>
+                        <li>📍 Фактический адрес организации: <span>Г. Тамбов, ул. Советская, д. 190</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Карта и Оплата -->
+            <div>
+                <div class="about-card" style="margin-bottom: 30px;">
+                    <h3>Режим работы и адрес</h3>
+                    <p style="margin-bottom: 20px;">Ежедневно с 11:00 до 23:00<br>г. Тамбов, ул. Советская, 190/5</p>
+                    <div class="map-container">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d2a7a1c9d3e1f6a3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                    </div>
+                </div>
+
+                <div class="payment-info">
+                    <h4>Информация об оплате</h4>
+                    <p><strong>Наличный расчёт:</strong> Оплата производится наличными курьеру при доставке заказа или самовывозом из точки продаж. При оформлении заказа укажите сумму, с которой Вам необходима сдача.</p>
+                    <p style="margin-top: 15px;"><strong>Картой:</strong> Оплата производится банковской картой курьеру при доставке заказа или при самовывозе из точки продаж.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -900,56 +1200,44 @@
             <button class="legal-tab" data-target="tab-social">Социальные сети</button>
         </div>
 
-        <!-- Пользовательское соглашение -->
         <div class="legal-content active" id="tab-agreement">
             <h4>1. Общие положения</h4>
             <p>Настоящее Пользовательское соглашение регулирует отношения между ООО «ФудСоул» (далее — Сервис) и любым лицом, использующим сервис «Ре.бро гриль бар | Тамбов» (далее — Пользователь).</p>
             <p>Оформляя Заказ через Сервис, Пользователь подтверждает полное ознакомление и согласие с настоящим Соглашением и Регулирующими документами.</p>
-
             <h4>2. Оформление заказа</h4>
             <p>Пользователь обязуется указать достоверные данные о себе и получателе Заказа. Пользователь несёт ответственность за все последствия, вызванные недостоверностью предоставленной информации.</p>
             <p>Для оформления Заказа Пользователь указывает: персональную информацию, полный адрес доставки, ФИО получателя, контактные данные, способ оплаты.</p>
-
             <h4>3. Права и обязанности</h4>
             <p>Сервис вправе заблокировать Пользователю возможность оформления Заказа в случае неисполнения обязательства по оплате, отказа от исполнения Договора, нарушения Пользовательского соглашения.</p>
             <p>Сервис вправе поручить исполнение Договора третьему лицу (Магазину и/или Доставщику), оставаясь ответственным за его исполнение.</p>
-
             <h4>4. Согласие на коммуникацию</h4>
             <p>Оформляя Заказ, Пользователь соглашается на получение: электронных писем о статусе Заказа, SMS-сообщений на указанный номер, звонка с предложением оценить качество работы Сервиса.</p>
-
             <h4>5. Персональные данные</h4>
             <p>Пользователь соглашается с тем, что персональная информация может быть передана Магазину и/или Доставщику для целей исполнения Заказа. Сервис вправе хранить персональную информацию до достижения целей, определённых в Соглашении и Политике конфиденциальности.</p>
         </div>
 
-        <!-- Лицензионное соглашение -->
         <div class="legal-content" id="tab-license">
             <h4>1. Общие положения</h4>
             <p>Настоящее Лицензионное соглашение устанавливает условия использования программы «Ре.бро гриль бар | Тамбов» (версии для Android и iOS). Правообладатель — ООО «ФудСоул» (ИНН 4345369685, ОГРН 1134345024318).</p>
             <p>Копируя Программу, устанавливая её на устройство или используя любым образом, Пользователь выражает полное согласие со всеми условиями Лицензии.</p>
-
             <h4>2. Права на программу</h4>
             <p>Исключительное право на Программу принадлежит Правообладателю.</p>
-
             <h4>3. Лицензия</h4>
             <p>Правообладатель безвозмездно предоставляет Пользователю непередаваемое право использования Программы на территории всего мира следующими способами:</p>
             <ul>
                 <li>Применять Программу по прямому функциональному назначению (установка на мобильные устройства);</li>
                 <li>Воспроизводить и распространять Программу в некоммерческих целях.</li>
             </ul>
-
             <h4>4. Ограничения</h4>
             <p>Использование Программы с нарушением любого из условий Лицензии запрещено. Использование способами, не предусмотренными Лицензией, возможно только на основании отдельного соглашения с Правообладателем.</p>
-
             <h4>5. Применимое право</h4>
             <p>К настоящей Лицензии подлежит применению право Российской Федерации. Любые споры рассматриваются в суде по месту нахождения Правообладателя.</p>
         </div>
 
-        <!-- Условия акций -->
         <div class="legal-content" id="tab-promo">
             <h4>1. Общие положения</h4>
             <p>Настоящие Условия регулируют использование промокодов, скидок, подарков и баллов в Сервисе «Ре.бро гриль бар | Тамбов».</p>
             <p>Активируя Промокод или отправляя Заказ со скидкой, Пользователь подтверждает полное ознакомление и согласие с настоящими Условиями.</p>
-
             <h4>2. Промокоды и скидки</h4>
             <p>Промокод — последовательность символов, при активации которой предоставляется Скидка, Подарок или начисляются баллы на Личный счёт.</p>
             <p>Промокод может предоставлять скидку:</p>
@@ -959,15 +1247,12 @@
                 <li>только в пределах определённой территории и/или срока.</li>
             </ul>
             <p>Скидки, подарки и оплата баллами могут суммироваться или не суммироваться в зависимости от решения Магазина.</p>
-
             <h4>3. Срок действия</h4>
             <p>По истечении срока действия Промокод становится недействительным.</p>
-
             <h4>4. Изменение условий</h4>
             <p>Сервис вправе изменять условия акций. Актуальная информация публикуется в приложении и на сайте.</p>
         </div>
 
-        <!-- Политика конфиденциальности -->
         <div class="legal-content" id="tab-privacy">
             <h4>1. Какие данные собираются</h4>
             <p>Приложение «Ре.бро гриль бар | Тамбов» может собирать следующие категории данных:</p>
@@ -976,21 +1261,16 @@
                 <li><strong>Данные, не связанные с вами:</strong> местоположение, диагностическая информация;</li>
                 <li><strong>Данные для отслеживания:</strong> идентификаторы (могут использоваться для отслеживания между приложениями и сайтами других компаний).</li>
             </ul>
-
             <h4>2. Цели обработки</h4>
             <p>Персональные данные обрабатываются для: оформления и исполнения Заказов, связи с Пользователем, улучшения качества сервиса, информирования об акциях и скидках.</p>
-
             <h4>3. Передача данных</h4>
             <p>Персональная информация может быть передана Магазину и/или Доставщику для целей исполнения Заказа. Сервис не передаёт данные третьим лицам в иных целях без согласия Пользователя.</p>
-
             <h4>4. Ваши права</h4>
             <p>Пользователь вправе запросить информацию об обработке своих персональных данных, а также потребовать их уточнения, блокирования или уничтожения в случаях, предусмотренных законодательством РФ.</p>
-
             <h4>5. Контакты</h4>
             <p>По вопросам обработки персональных данных обращайтесь в ООО «ФудСоул» (ИНН 4345369685).</p>
         </div>
 
-        <!-- Правила оплаты -->
         <div class="legal-content" id="tab-payment">
             <h4>1. Способы оплаты</h4>
             <p>Оплата Заказов в Сервисе «Ре.бро гриль бар | Тамбов» может производиться следующими способами:</p>
@@ -1000,25 +1280,19 @@
                 <li>через системы быстрых платежей (QR-код);</li>
                 <li>баллами, накопленными в программе лояльности (частично или полностью, в зависимости от условий).</li>
             </ul>
-
             <h4>2. Момент оплаты</h4>
             <p>При онлайн-оплате денежные средства списываются в момент подтверждения Заказа. При оплате наличными — в момент передачи Заказа Пользователю.</p>
-
             <h4>3. Безопасность платежей</h4>
             <p>Обработка платежей осуществляется через защищённые платёжные шлюзы. Сервис не хранит полные данные банковских карт Пользователей.</p>
-
             <h4>4. Возврат средств</h4>
             <p>Возврат средств осуществляется в соответствии с законодательством РФ о защите прав потребителей. Для оформления возврата необходимо обратиться в службу поддержки Сервиса.</p>
-
             <h4>5. Чеки</h4>
             <p>Электронный чек направляется Пользователю после оплаты Заказа. По запросу может быть предоставлен бумажный чек.</p>
         </div>
 
-        <!-- СОЦИАЛЬНЫЕ СЕТИ -->
         <div class="legal-content" id="tab-social">
             <h4>Мы в социальных сетях</h4>
             <p>Следите за новостями, акциями и специальными предложениями гриль-бара «Ре.БРО» в Тамбове на наших официальных страницах.</p>
-
             <div class="social-links">
                 <a href="https://vk.ru/re.bro68" target="_blank" rel="noopener noreferrer" class="social-link">
                     <span class="social-icon">
@@ -1042,7 +1316,6 @@
             <div class="footer-brand">
                 <h3>Ре.БРО</h3>
                 <p>Гриль-бар и мангал в Тамбове. Техасский смокер, дубовые дрова, мясо без компромиссов.</p>
-                <!-- Ссылка на ВК в подвале -->
                 <a href="https://vk.ru/re.bro68" target="_blank" rel="noopener noreferrer">
                     <img src="https://vk.com/images/icons/favicons/fav_logo.ico" alt="ВКонтакте" class="vk-footer-img">
                 </a>
@@ -1052,13 +1325,7 @@
                 <p>г. Тамбов, ул. Советская, 190/5</p>
                 <p>Ежедневно 11:00–23:00</p>
                 <p>8 915 873-00-03</p>
-            </div>
-            <div class="footer-col">
-                <h4>Заказ</h4>
-                <a href="https://vk.ru/re.bro68" target="_blank" rel="noopener noreferrer">Сообщество ВК</a>
-                <a href="#">Приложение Ре.БРО</a>
-                <a href="#">Яндекс.Еда</a>
-                <a href="#">Delivery-club</a>
+                <p>rebrotambov@yandex.ru</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1067,8 +1334,139 @@
     </div>
 </footer>
 
+<!-- КОРЗИНА (ПЛАВАЮЩАЯ КНОПКА) -->
+<div class="cart-fab" id="cart-fab">
+    🛒
+    <div class="cart-badge" id="cart-badge">0</div>
+</div>
+
+<!-- КОРЗИНА (ПАНЕЛЬ) -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-panel" id="cart-panel">
+    <div class="cart-header">
+        <h3>Корзина</h3>
+        <button class="cart-close" id="cart-close">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+        <div class="cart-empty">Корзина пока пуста</div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display: none;">
+        <div class="cart-total">
+            <span>Итого:</span>
+            <span id="cart-total-price">0 ₽</span>
+        </div>
+        <button class="cart-checkout" onclick="alert('Заказ оформлен! (Это демо-версия)')">Оформить заказ</button>
+    </div>
+</div>
+
 <script>
-    // Переключение юридических вкладок
+    // ==== КОРЗИНА ====
+    let cart = [];
+
+    const cartFab = document.getElementById('cart-fab');
+    const cartPanel = document.getElementById('cart-panel');
+    const cartOverlay = document.getElementById('cart-overlay');
+    const cartClose = document.getElementById('cart-close');
+    const cartBadge = document.getElementById('cart-badge');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalPrice = document.getElementById('cart-total-price');
+    const cartFooter = document.getElementById('cart-footer');
+
+    // Открытие/закрытие корзины
+    cartFab.addEventListener('click', () => {
+        cartPanel.classList.add('active');
+        cartOverlay.classList.add('active');
+    });
+
+    const closeCart = () => {
+        cartPanel.classList.remove('active');
+        cartOverlay.classList.remove('active');
+    };
+
+    cartClose.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    // Добавление в корзину
+    document.querySelectorAll('.btn-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const name = btn.getAttribute('data-name');
+            const price = parseInt(btn.getAttribute('data-price'));
+            
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            
+            updateCartUI();
+            
+            const originalText = btn.textContent;
+            btn.textContent = 'ДОБАВЛЕНО ✓';
+            btn.style.color = '#4CAF50';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.color = '';
+            }, 1000);
+        });
+    });
+
+    // Обновление интерфейса корзины
+    function updateCartUI() {
+        const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+        cartBadge.textContent = totalItems;
+        cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
+
+        cartItemsContainer.innerHTML = '';
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<div class="cart-empty">Корзина пока пуста</div>';
+            cartFooter.style.display = 'none';
+            return;
+        }
+
+        let totalPrice = 0;
+        cart.forEach((item, index) => {
+            totalPrice += item.price * item.qty;
+            
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item';
+            itemDiv.innerHTML = `
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p>${item.price} ₽</p>
+                </div>
+                <div class="cart-item-controls">
+                    <button class="cart-qty-btn" onclick="changeQty(${index}, -1)">-</button>
+                    <span class="cart-qty-val">${item.qty}</span>
+                    <button class="cart-qty-btn" onclick="changeQty(${index}, 1)">+</button>
+                    <button class="cart-item-remove" onclick="removeItem(${index})">×</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(itemDiv);
+        });
+
+        cartTotalPrice.textContent = totalPrice.toLocaleString('ru-RU') + ' ₽';
+        cartFooter.style.display = 'block';
+    }
+
+    window.changeQty = function(index, delta) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) {
+            cart.splice(index, 1);
+        }
+        updateCartUI();
+    };
+
+    window.removeItem = function(index) {
+        cart.splice(index, 1);
+        updateCartUI();
+    };
+
+    updateCartUI();
+
+    // ==== ЮРИДИЧЕСКИЕ ВКЛАДКИ ====
     document.querySelectorAll('.legal-tab').forEach(function(tab) {
         tab.addEventListener('click', function() {
             document.querySelectorAll('.legal-tab').forEach(function(t) { t.classList.remove('active'); });
@@ -1079,7 +1477,7 @@
         });
     });
 
-    // Фильтрация меню
+    // ==== ФИЛЬТРАЦИЯ МЕНЮ ====
     document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
